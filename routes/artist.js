@@ -32,7 +32,6 @@ artistRoute.get('/artists', async (req, res) => {
   }
 });
 
-
 //Route to get artist CSV file based on user-defined name
 artistRoute.get('/artists/:artistName/csv/:fileName', async (req, res) => {
   const {artistName, fileName} = req.params;
@@ -45,9 +44,8 @@ artistRoute.get('/artists/:artistName/csv/:fileName', async (req, res) => {
     const response = await axios.get(url);
     artists = response.data.results.artistmatches.artist;
 
-  
       if(artists.length === 0) {
-        // If there are no results, retrieve random artist names from mock artist data
+        // If there are no results, retrieve random artist names from mock artist array
         const artistMockNames = ['Elvis', 'Scorpions', 'Kodaline'];
         const randomArtistName = artistMockNames[Math.floor(Math.random() * artistMockNames.length)];
         const url = `https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${randomArtistName}&api_key=${apiKey}&format=json`;
@@ -65,7 +63,9 @@ artistRoute.get('/artists/:artistName/csv/:fileName', async (req, res) => {
         'image': artist.image[3]['#text']
         }
     });
-    const csv = json2csv(modifiedArtists);
+
+    //Use of json2csv package to convert data to csv file and sending it to client
+    const csv = json2csv(modifiedArtists); 
     res.attachment(`${fileName}.csv`);
     res.status(200).send(csv);
   } catch (error) {
