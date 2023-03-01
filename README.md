@@ -1,7 +1,6 @@
 # Artist Search - RESTful API
 
-API Documentation: https://documenter.getpostman.com/view/24037989/2s93CSprTf#71e5231c-2d56-43c8-897b-599a8e4cc570
-The endpoints can be tested using Postman.
+> API Documentation: https://documenter.getpostman.com/view/24037989/2s93CSprTf#71e5231c-2d56-43c8-897b-599a8e4cc570
 
 ## Features
 
@@ -39,8 +38,8 @@ The endpoints can be tested using Postman.
 
 5.  Open Postman to test the API endpoints.
 
-- When we access the end point on http://localhost:8080/artists/, and pass value to artistName query params, we receive the JSON data with response status code of 200.
+When we access the end point on http://localhost:8080/artists/, and pass value to artistName query params, we receive the JSON data with response status code of 200.
   ![](demo/artist-search-postman-1.gif)
 
-- When we access the end point on http://localhost:8080/artists/:artistName/csv/:fileName, and pass value to both path variables artistName and fileName, we receive the data in csv format with response status code of 200.
+When we access the end point on http://localhost:8080/artists/:artistName/csv/:fileName, and pass value to both path variables artistName and fileName, we receive the data in csv format with response status code of 200.
   ![](demo/artist-search-postman-2.gif)
