@@ -7,6 +7,15 @@ const app = express();
 // Morgan logging middleware
 app.use(morgan('dev'));
 
+//define static folder
+app.use(express.static('client'));
+
+//route to get index.html which is the home page of the app
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+    }
+);
+
 // Routes
 app.use('/', artistRoute);
 
