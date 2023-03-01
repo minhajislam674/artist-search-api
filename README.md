@@ -38,8 +38,8 @@
 
 5.  Open Postman to test the API endpoints.
 
-When we access the end point on http://localhost:8080/artists/, and pass value to artistName query params, we receive the JSON data with response status code of 200.
+- When we access the end point on http://localhost:8080/artists/, and pass value to artistName query params, we receive the JSON data with response status code of 200.
   ![](demo/artist-search-postman-1.gif)
 
-When we access the end point on http://localhost:8080/artists/:artistName/csv/:fileName, and pass value to both path variables artistName and fileName, we receive the data in csv format with response status code of 200.
+- When we access the end point on http://localhost:8080/artists/:artistName/csv/:fileName, and pass value to both path variables artistName and fileName, we receive the data in csv format with response status code of 200.
   ![](demo/artist-search-postman-2.gif)
