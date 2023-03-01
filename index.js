@@ -1,12 +1,10 @@
 const express = require('express'), 
     morgan = require('morgan');
-    // json2csv = require('json2csv').parse;
 
 const artistRoute = require('./routes/artist');
-
 const app = express();
 
-// Morgan middleware
+// Morgan logging middleware
 app.use(morgan('dev'));
 
 // Routes
